@@ -1,0 +1,14 @@
+.nav{
+    padding: 0px 25px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.ul{
+    list-style-type: none;
+}
+
+.ul li{
+    display: inline;
+    margin: 5px;
+}
