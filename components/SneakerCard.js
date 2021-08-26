@@ -1,13 +1,21 @@
 
+import Link from 'next/link'
+import { Card, Button, Col} from 'react-bootstrap'
 
-
-const SneakerCard = ({sneakers}) => {
+const SneakerCard = ({ sneaker }) => {
     return (
-        <div>
-            {
-        sneakers.map((sneaker) => <h3>{`${sneaker.brand} ${sneaker.name}`}</h3>)
-      }
-        </div>
+        
+               <Col>
+                <Card style={{ width: '18rem' }}>
+                    {sneaker.media.imageUrl ? <Card.Img variant="top" src={`${sneaker.media.imageUrl}`} /> : null}
+                    <Card.Body>
+                        <Card.Title>{sneaker.shoe}</Card.Title>
+                        <Link href="/sneaker/[id]" as={`/sneaker/${sneaker.id}`} >
+                        <Button variant="primary">Check it out</Button>
+                        </Link>
+                    </Card.Body>
+                </Card>
+                </Col>
     )
 }
 

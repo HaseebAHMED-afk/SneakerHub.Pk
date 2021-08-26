@@ -1,9 +1,9 @@
 import Head from 'next/head'
 import axios from 'axios'
+import SneakerList from '../components/SneakerList';
 
 const index = ({sneakers}) => {
 
-  console.log(sneakers);
 
   return (
     <div>
@@ -12,6 +12,7 @@ const index = ({sneakers}) => {
       </Head>
       <h1>Hello, welcome to sneaker hub</h1>
 
+    <SneakerList sneakers={sneakers} />
       
     </div>
   )

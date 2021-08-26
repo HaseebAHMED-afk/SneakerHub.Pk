@@ -1,8 +1,7 @@
 
 
-const newest = ({brands}) => {
+const newest = () => {
 
-    console.log(brands);
 
     return (
         <div>
