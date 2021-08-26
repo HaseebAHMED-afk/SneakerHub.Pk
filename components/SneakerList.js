@@ -8,8 +8,8 @@ const SneakerList = ({sneakers}) => {
         <div>
              <Row xs={1} md={2} lg={3} className="g-4" >
             {
-                sneakers.map((sneaker) => (
-               <SneakerCard sneaker={sneaker} />
+                sneakers.map((sneaker , i) => (
+               <SneakerCard key={i} sneaker={sneaker} />
                 ))
             }
         </Row>
