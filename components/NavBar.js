@@ -1,8 +1,11 @@
-import styles from '../styles/Nav.module.css'
 import Link from 'next/link'
 import { Navbar, Nav, Container, NavDropdown } from 'react-bootstrap'
 
-const NavBar = () => {
+const NavBar = ({brands}) => {
+
+
+  console.log(brands);
+
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Container>
@@ -22,3 +25,27 @@ const NavBar = () => {
 }
 
 export default NavBar
+
+
+export const getStaticProps = async () =>{
+  
+ 
+  var options = {
+    method: 'GET',
+    url: 'https://v1-sneakers.p.rapidapi.com/v1/brands',
+    headers: {
+      'x-rapidapi-host': 'v1-sneakers.p.rapidapi.com',
+      'x-rapidapi-key': '7cfee83871msh67b5e02d5687514p148362jsne793419737e2'
+    }
+  };
+
+  const res = await axios(options)
+
+  const {results} = await JSON.parse(JSON.stringify(res))
+
+  return {
+    props:{
+      brands: results
+    }
+  }
+}

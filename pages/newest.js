@@ -1,6 +1,9 @@
 
 
-const newest = () => {
+const newest = ({brands}) => {
+
+    console.log(brands);
+
     return (
         <div>
             Newest sneakrs page
@@ -9,3 +12,5 @@ const newest = () => {
 }
 
 export default newest
+
+
